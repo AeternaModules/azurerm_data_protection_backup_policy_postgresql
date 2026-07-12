@@ -28,7 +28,7 @@ EOT
     resource_group_name             = string
     vault_name                      = string
     time_zone                       = optional(string)
-    retention_rule = optional(object({
+    retention_rule = optional(list(object({
       criteria = object({
         absolute_criteria      = optional(string)
         days_of_week           = optional(set(string))
@@ -39,7 +39,7 @@ EOT
       duration = string
       name     = string
       priority = number
-    }))
+    })))
   }))
 }
 
